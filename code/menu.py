@@ -11,7 +11,7 @@ from code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_
 class Menu:
 	def __init__(self, window):
 		self.window = window
-		self.surf = pygame.image.load('./asset/MenuBg.png')
+		self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
 		self.rect = self.surf.get_rect(left=0, top=0)
 
 	def run(self):
@@ -37,17 +37,17 @@ class Menu:
 					pygame.quit()  # Close window
 					quit()  # End pyganme
 				if event.type == pygame.KEYDOWN:
-					if event.key == pygame.K_DOWN: # Down Key
-						if menu_option < len(MENU_OPTION) -1:
+					if event.key == pygame.K_DOWN:  # Down Key
+						if menu_option < len(MENU_OPTION) - 1:
 							menu_option += 1
 						else:
 							menu_option = 0
 
-					elif event.key == pygame.K_UP: # Up Key
+					elif event.key == pygame.K_UP:  # Up Key
 						if menu_option > 0:
 							menu_option -= 1
 						else:
-							menu_option = len(MENU_OPTION) -1
+							menu_option = len(MENU_OPTION) - 1
 					if event.key == pygame.K_RETURN:  # Enter key
 						return MENU_OPTION[menu_option]
 					else:
