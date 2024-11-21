@@ -1,3 +1,6 @@
+from code.Const import WIN_WIDTH
+from code.EnemyShot import EnemyShot
+from code.PlayerShot import PlayerShot
 from code.enemy import Enemy
 from code.entity import Entity
 from code.entityFactory import EntityFactory
@@ -7,7 +10,13 @@ class EntityMediator:
 	@staticmethod
 	def __verify_collision_window(ent: Entity):
 		if isinstance(ent, Enemy):
-			if ent.rect.right < 0:
+			if ent.rect.right <= 0:
+				ent.health = 0
+		if isinstance(ent, PlayerShot):
+			if ent.rect.left >= WIN_WIDTH:
+				ent.health = 0
+		if isinstance(ent, EnemyShot):
+			if ent.rect.right <= 0:
 				ent.health = 0
 
 
