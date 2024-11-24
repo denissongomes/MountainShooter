@@ -176,6 +176,11 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 
-#Database SQLite3 (Projeto)
+# Custom (Projeto)
+
+# Database SQLite3
 /DBScore
+
+#Pycharm Idea
+/.idea/dictionaries
 /.idea/dataSources.xml
