@@ -9,11 +9,11 @@ from pygame.font import Font
 
 from code.Const import C_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, C_GREEN, C_CYAN, EVENT_TIMEOUT, \
 	TIMEOUT_STEP, TIMEOUT_LEVEL
-from code.enemy import Enemy
-from code.entity import Entity
+from code.Enemy import Enemy
+from code.Entity import Entity
 from code.entityFactory import EntityFactory
 from code.entityMediator import EntityMediator
-from code.player import Player
+from code.Player import Player
 
 
 class Level:
